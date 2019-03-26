@@ -1,11 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <conio.h>
 
  
 #define MAXCHAR 1000
 
 
-int selections(category) {
+int selections(int category) {
 	    FILE *fp;
 	    FILE *fp2;
 	    FILE *temp;
@@ -44,7 +46,7 @@ int selections(category) {
 		}
 	if (category == 2) {
 			printf("\nEnter item ID: ");
-			scanf("%s", &itemID);
+			fgets(itemID, sizeof(itemID), stdin);
 			
 			fp = fopen(filename, "r");
 		    if (fp == NULL){
@@ -95,7 +97,7 @@ int selections(category) {
 				}
 				else {
 					printf("\nEnter item ID: ");
-					scanf("%s", &itemID);
+					fgets(itemID, sizeof(itemID), stdin);
 						fp = fopen(filename, "r");
 						FILE *f = fopen("temp.txt", "w+");
 		    			if (fp == NULL){
@@ -158,7 +160,7 @@ int selections(category) {
 		}
 		else {
 			printf("\nEnter item ID: ");
-			scanf("%s", &itemID);
+			fgets(itemID, sizeof(itemID), stdin);
 			fp = fopen(filename, "r");
 			FILE *f = fopen("temp.txt", "w+");
 			if (fp == NULL){
@@ -222,7 +224,7 @@ int selections(category) {
 			printf("Could not open file %s",filename);
 			}
 		printf("\nEnter item ID u wish to add: ");
-		scanf("%s", &itemID);
+		fgets(itemID, sizeof(itemID), stdin);
 		i=0;
 		while (fgets(str, MAXCHAR, fp) != NULL) {
 			strcpy(a[i], str); 
@@ -252,7 +254,7 @@ int selections(category) {
 	}
 	if (category == 7) {
 		printf("\nEnter item ID: ");
-		scanf("%s", &itemID);
+		fgets(itemID, sizeof(itemID), stdin);
 			fp = fopen(filename, "r");
 			FILE *f = fopen("temp.txt", "w+");
 			if (fp == NULL){
