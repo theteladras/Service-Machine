@@ -21,13 +21,10 @@ int selections(int category) {
     int userID;
     int i=0;
     int j;
-    int m;
-    char jC;
     int n;
     int vvv=10;
     char a[100][10];
     int flag = 1;
-    char helpArr[100];
     int ppu;
     
 	if (category == 1) {
@@ -99,7 +96,7 @@ int selections(int category) {
 					printf("\nEnter item ID: ");
 					fgets(itemID, sizeof(itemID), stdin);
 						fp = fopen(filename, "r");
-						FILE *f = fopen("temp.txt", "w+");
+						temp = fopen(tempFN, "w+");
 		    			if (fp == NULL){
 		        			printf("Could not open file %s",filename);
 		    			}
@@ -139,14 +136,14 @@ int selections(int category) {
 						else if (flag == 1 && i > vvv-2) {
 							printf("\nThe item with the enterd index does not exist!!!\n");
 							}
-						fprintf(f, "%s", str);						
+						fprintf(temp, "%s", str);						
 						flag = 0;
 						i++;
 			}
-						fclose(f);
+						fclose(temp);
 						fclose(fp);
 						remove("items.txt");
-						rename("temp.txt", "items.txt");
+						rename(tempFN, "items.txt");
 						flag = 1;
 						
 		}
@@ -162,7 +159,7 @@ int selections(int category) {
 			printf("\nEnter item ID: ");
 			fgets(itemID, sizeof(itemID), stdin);
 			fp = fopen(filename, "r");
-			FILE *f = fopen("temp.txt", "w+");
+			temp = fopen(tempFN, "w+");
 			if (fp == NULL){
 			    printf("Could not open file %s",filename);
 			    }
@@ -207,13 +204,13 @@ int selections(int category) {
 						}
 						printf("\n\n HERE IT IS IT IS: %s", str);
 				}
-					fprintf(f, "%s", str);
+					fprintf(temp, "%s", str);
 			i++;
 			}
-			fclose(f);
+			fclose(temp);
 			fclose(fp);
 			remove("items.txt");
-			rename("temp.txt", "items.txt");
+			rename(tempFN, "items.txt");
 			flag = 1;
 		}
 	}
@@ -256,7 +253,7 @@ int selections(int category) {
 		printf("\nEnter item ID: ");
 		fgets(itemID, sizeof(itemID), stdin);
 			fp = fopen(filename, "r");
-			FILE *f = fopen("temp.txt", "w+");
+			temp = fopen(tempFN, "w+");
 			if (fp == NULL){
 			    printf("Could not open file %s",filename);
 			    } i=0;
@@ -265,13 +262,13 @@ int selections(int category) {
 					if (str[0] == itemID[0] && str[1] == itemID[1] && str[2] == itemID[2] && str[3] == itemID[3]) {
 						str[0] = '\0';
 					}
-					fprintf(f, "%s", str); i++;
+					fprintf(temp, "%s", str); i++;
 				}
 			flag = 1;
-			fclose(f);
+			fclose(temp);
 			fclose(fp);
 			remove("items.txt");
-			rename("temp.txt", "items.txt");
+			rename(tempFN, "items.txt");
 			flag = 1;
 		}
 	}
