@@ -50,7 +50,10 @@ int selections(int category) {
 		}
 		while (fgets(str, MAXCHAR, fp) != NULL) {
 			strcpy(a[i], str);
-			if(a[i][0] == itemID[0] && a[i][1] == itemID[1] && a[i][2] == itemID[2] && a[i][3] == itemID[3]) {
+			if(a[i][0] == itemID[0] &&
+			   a[i][1] == itemID[1] &&
+			   a[i][2] == itemID[2] &&
+			   a[i][3] == itemID[3]) {
 				printf("\nItemID\\Quantity\\Price Per Unit (SAR)\n");
 				printf("\n\n");
 				puts(str);
@@ -102,7 +105,10 @@ int selections(int category) {
 			while (fgets(str, MAXCHAR, fp) != NULL) {
 				strcpy(a[i], str);
 
-				if (a[i][0] == itemID[0] && a[i][1] == itemID[1] && a[i][2] == itemID[2] && a[i][3] == itemID[3]) {
+				if (a[i][0] == itemID[0] &&
+				    a[i][1] == itemID[1] &&
+				    a[i][2] == itemID[2] &&
+				    a[i][3] == itemID[3]) {
 					if (a[i][6] == ' ') {
 						j = a[i][5] - '0';
 						if (j > 0) {
@@ -158,7 +164,10 @@ int selections(int category) {
 			}
 			while (fgets(str, MAXCHAR, fp) != NULL) {
 				strcpy(a[i], str);
-				if (a[i][0] == itemID[0] && a[i][1] == itemID[1] && a[i][2] == itemID[2] && a[i][3] == itemID[3]) {
+				if (a[i][0] == itemID[0] &&
+				    a[i][1] == itemID[1] &&
+				    a[i][2] == itemID[2] &&
+				    a[i][3] == itemID[3]) {
 					printf("\nEnter item quantity you want to return: ");
 					scanf("%d",&itemQ);
 					if (str[6] == ' ') {
@@ -218,12 +227,19 @@ int selections(int category) {
 		i = 0;
 		while (fgets(str, MAXCHAR, fp) != NULL) {
 			strcpy(a[i], str);
-			if (str[0] == itemID[0] && str[1] == itemID[1] && str[2] == itemID[2] && str[3] == itemID[3]) {
+			if (str[0] == itemID[0] &&
+			    str[1] == itemID[1] &&
+			    str[2] == itemID[2] &&
+			    str[3] == itemID[3]) {
 				printf("\nThe item with that ID already exists!\n");
 				return 0;
 			}
 			else {
-				if (itemID[0] - '0' < 1 || itemID[4] || itemID[0] - '0' > 9 || itemID[1] - '0' < 0 || itemID[1] - '0' > 9 || itemID[2] - '0' < 0 || itemID[2] - '0' > 9 || itemID[3] - '0' < 0 || itemID[3] - '0' > 9) {
+				if (itemID[4] ||
+				    itemID[0] - '0' < 1 || itemID[0] - '0' > 9 ||
+				    itemID[1] - '0' < 0 || itemID[1] - '0' > 9 ||
+				    itemID[2] - '0' < 0 || itemID[2] - '0' > 9 ||
+				    itemID[3] - '0' < 0 || itemID[3] - '0' > 9) {
 					printf("\nItem ID should be in range of 1000-9999!\n");
 				}
 			}
@@ -252,7 +268,10 @@ int selections(int category) {
 		i = 0;
 		while (fgets(str, MAXCHAR, fp) != NULL) {
 			strcpy(a[i], str);
-			if (str[0] == itemID[0] && str[1] == itemID[1] && str[2] == itemID[2] && str[3] == itemID[3]) {
+			if (str[0] == itemID[0] &&
+			    str[1] == itemID[1] &&
+			    str[2] == itemID[2] &&
+			    str[3] == itemID[3]) {
 				str[0] = '\0';
 			}
 			fprintf(temp, "%s", str);
