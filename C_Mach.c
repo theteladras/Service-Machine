@@ -82,7 +82,7 @@ int selections(int category) {
 	if (category == 8) {
     		exit(0);
 		}
-	if (category < 1 || category > 8 && category != 123) {
+	if (category < 1 || (category > 8 && category != 123)) {
 			printf("\nUnvalit selection, please try again... \n");
 			printf("\n");
 		}
@@ -271,6 +271,7 @@ int selections(int category) {
 			rename(tempFN, "items.txt");
 			flag = 1;
 		}
+		return 1;
 	}
 		
 
