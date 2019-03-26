@@ -57,7 +57,7 @@ int selections(int category) {
 				flag = 0;
 			}
 			else if (flag == 1 && i > vvv - 2) {
-				printf("\nThe item with the enterd index does not exist!!!\n");
+				printf("\nThe item with the entered index does not exist!!!\n");
 			}
 			i++;
 		}
@@ -82,11 +82,11 @@ int selections(int category) {
 		exit(0);
 	}
 	if (category < 1 || (category > 8 && category != 123)) {
-		printf("\nUnvalit selection, please try again... \n");
+		printf("\nInvalid selection, please try again...\n");
 		printf("\n");
 	}
 	if (category == 4) {
-		printf("\nEnther User ID: ");
+		printf("\nEnter User ID: ");
 		scanf("%d", &userID);
 		if (userID < 10 || userID > 60) {
 			printf("\nThe customerID is not in the range 10 to 60 inclusive.\n");
@@ -107,7 +107,7 @@ int selections(int category) {
 						j = a[i][5] - '0';
 						if (j > 0) {
 							str[5] = j - 1 + '0';
-							printf("\nYou puchased ONE! Remaining quantity of this item in stock: %d", j - 1);
+							printf("\nYou purchased ONE! Remaining quantity of this item in stock: %d", j - 1);
 						}
 						else {
 							printf("\nThere is not enough quantity available for the item to purchase.");
@@ -119,7 +119,7 @@ int selections(int category) {
 						if (j > 0) {
 							str[5] = (j - 1)/10 + '0';
 							str[6] = (j - 1)%10 + '0';
-							printf("\nYou puchased ONE! Remaining quantity of this item in stock: %d", j - 1);
+							printf("\nYou purchased ONE! Remaining quantity of this item in stock: %d", j - 1);
 							vvv--;
 						}
 						else {
@@ -128,7 +128,7 @@ int selections(int category) {
 					}
 				}
 				else if (flag == 1 && i > vvv - 2) {
-					printf("\nThe item with the enterd index does not exist!!!\n");
+					printf("\nThe item with the entered index does not exist!!!\n");
 				}
 				fprintf(temp, "%s", str);
 				flag = 0;
@@ -143,7 +143,7 @@ int selections(int category) {
 	}
 
 	if (category == 5) {
-		printf("\nEnther User ID: ");
+		printf("\nEnter User ID: ");
 		scanf("%d", &userID);
 		if (userID < 10 || userID > 60) {
 			printf("\nThe customerID is not in the range 10 to 60 inclusive.\n");
@@ -159,7 +159,7 @@ int selections(int category) {
 			while (fgets(str, MAXCHAR, fp) != NULL) {
 				strcpy(a[i], str);
 				if (a[i][0] == itemID[0] && a[i][1] == itemID[1] && a[i][2] == itemID[2] && a[i][3] == itemID[3]) {
-					printf("\nEnther item quantity u want to return: ");
+					printf("\nEnter item quantity you want to return: ");
 					scanf("%d",&itemQ);
 					if (str[6] == ' ') {
 						n = str[5] - '0';
@@ -219,7 +219,7 @@ int selections(int category) {
 		while (fgets(str, MAXCHAR, fp) != NULL) {
 			strcpy(a[i], str);
 			if (str[0] == itemID[0] && str[1] == itemID[1] && str[2] == itemID[2] && str[3] == itemID[3]) {
-				printf("\nThe item with that ID alredy exists!\n");
+				printf("\nThe item with that ID already exists!\n");
 				return 0;
 			}
 			else {
@@ -232,7 +232,7 @@ int selections(int category) {
 		printf("\nEnter price per unit (less than 100): ");
 		scanf("%d", &ppu);
 		if (ppu >= 100 || ppu < 0) {
-			printf("\nYou have entherd a invalid price...\n");
+			printf("\nYou have entered a invalid price...\n");
 		}
 		else {
 			fprintf(fp, "\n%s 1 %d", itemID, ppu);
