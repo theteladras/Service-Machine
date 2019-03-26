@@ -274,7 +274,14 @@ int main() {
 	char *filename = "items.txt";
 
 	while (1) {
-		printf("1.Display Item Info for all Items\n2.Display Item Info for a particular item\n3.Display Customer Info for all customers\n4.Purchase Item\n5.Return Item\n6.Add New Item\n7.Delete Item\n8.Exit\n");
+		printf("1.Display Item Info for all Items\n");
+		printf("2.Display Item Info for a particular item\n");
+		printf("3.Display Customer Info for all customers\n");
+		printf("4.Purchase Item\n");
+		printf("5.Return Item\n");
+		printf("6.Add New Item\n");
+		printf("7.Delete Item\n");
+		printf("8.Exit\n");
 		printf("Please select your choice (or type '123' to reset the text file): ");
 		scanf("%d", &category);
 		if (category == 123) {
@@ -282,7 +289,16 @@ int main() {
 			if (fp == NULL){
 				printf("Could not open file %s", filename);
 			}
-			fprintf(fp, "1007 5 30\n1004 4 10\n1003 3 20\n1002 2 10\n1006 4 40\n1005 5 50\n1001 1 70\n1008 6 20\n1010 4 90\n1009 3 10");
+			fprintf(fp, "1007 5 30\n");
+			fprintf(fp, "1004 4 10\n");
+			fprintf(fp, "1003 3 20\n");
+			fprintf(fp, "1002 2 10\n");
+			fprintf(fp, "1006 4 40\n");
+			fprintf(fp, "1005 5 50\n");
+			fprintf(fp, "1001 1 70\n");
+			fprintf(fp, "1008 6 20\n");
+			fprintf(fp, "1010 4 90\n");
+			fprintf(fp, "1009 3 10");
 			fclose(fp);
 		}
 
